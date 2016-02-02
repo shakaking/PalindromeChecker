@@ -14,9 +14,47 @@ public void setup()
     }
   }
 }
-public boolean palindrome(String word)
+
+public String basicString(String word)
 {
-  //your code here
-  return false;
+  String bob = "";
+  for(int w = 0; w < word.length(); w++)
+  {
+    if(word.charAt(w) != ' ' && Character.isLetter(word.charAt(w)) )
+    {
+      bob = bob + word.charAt(w);
+    }
+  }
+  bob = bob.toLowerCase();
+  return bob;
+}
+
+public String reverseString(String bob)
+{
+  String reverseBob = "";
+  for(int q = bob.length() - 1; q >= 0; q--)
+  {
+    reverseBob = reverseBob + bob.substring(q,q+1);
+  }
+  return reverseBob;
+}
+
+
+public boolean palindrome(String bob)
+{
+  bob = basicString(bob);
+  System.out.println(bob);
+  String reverseBob = reverseString(bob);
+  System.out.println(reverseString(bob));
+
+  if(bob.equals(reverseBob))
+  {
+    return true;
+  }
+  else 
+  {
+    return false;
+  }
+
 }
 
